@@ -2,19 +2,30 @@
 --------------------------------------------------------------------------------
 FILE NAME:  scr_json_data_bib.py
 DATE:       190318(Mon)
+HISTORY:    20200108(Wed) eKJV(킹제임스) 생성, 주석 수정
 SYNOPSIS:   scr_json_data_bib.py [original_bible_file_name]
 DESCRIPTION: 성경 파일을 읽고 분석해서 ./json/만든 폴더에 모든 json형식의 파일을 생성
-190909(Mon) 진행순서
+
+# 진행순서 190909(Mon)
 1. 현재폴더 확인
 /Users/iki/Downloads/dev/python/lib_py/script_bib
+
 2. original_bib_file 에 원본파일 확인(from /Users/iki/Downloads/vm_downloads/01_edu/99_bib)
+eKJV.btx # 20200108(Wed) KJS(킹제임스)
 kNKRV.btx
+
 3. bib_name 를 정함
+bib_name = "eKJV"  # 20200108(Wed) KJS(킹제임스)
 bib_name = "kNKRV"  # 개역개정판
+
 4. .json 아래에 폴더 생성하기
 /Users/iki/Downloads/dev/python/lib_py/script_bib/json
 mkdir kNKRV_bib
-5. run&save the log
+
+5. run & save the log
+# 20200108(Wed) 실행 & 로그 저장
+iki script_bib $ python3 scr_json_data_bib.py ./original_bib_file/eKJV.btx > ./log/log_json_eKJV.txt
+#
 iki script_bib $ python3 scr_json_data_bib.py ./original_bib_file/kNKRV.btx > ./log/log_json_kNKRV.txt
 --------------------------------------------------------------------------------
 """
@@ -87,10 +98,12 @@ def writemyfile(fname, val):  # 파일에 저장
 # 190324(Sun) 파일 내의 book(66)을 확인하고 book별로 파일을 만들어 저장함.
 # main
 str_file = ""
-bib_name = "kNKRV"  # 개역개정판 190909(Mon)
+bib_name = "eKJV"  # KJV # 20200108(Wed) 추가
+# bib_name = "kNKRV"  # 개역개정판 190909(Mon)
 # bib_name = "eNIV2011"  # NIV 190324(Sun)
 # bib_name = "kHRV"  # 개역한글판 190324(Sun)
-# 01~66 (Old:39, New:27)
+
+# 성경은 총66개로 구성되어있음, 01~66 (Old:39, New:27)
 # book = "41"
 for i in range(66):
     book = "%02d" % (i+1)
@@ -106,10 +119,6 @@ for i in range(66):
     writemyfile("./json/%s_bib/%s_bib%s.json" %
                 (bib_name, bib_name, book), str_file)
 
-'''
-# 실행
-iki scr_bib $ python3 scr_json_data_bib.py ./original_bib_file/kHRV.btx 
-'''
 
 '''
 # main
