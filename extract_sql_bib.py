@@ -8,15 +8,29 @@ DESCRIPTION:
 HISTORY:
 190405: 파일 이름 바꿈 scr_div_data_from_bib.py => extract_sql_bib.py
 190405: str_savefile_name 추가
+
+# 실행순서
+1. 저장할 파일 이름을 정함
+str_savefile_name = "bib_eKJV"
+2. 원본 파일(.btx) 경로를 확인
+./original_bib_file/eKJV.btx
+3. 실행
+python3 extract_sql_bib.py ./original_bib_file/eKJV.btx
+4. ./sql 폴더에 저장했던 파일이름 확인(확장자 .sql)
+
 --------------------------------------------------------------------------------
 """
 
 import sys
 
 str_please = "파일을 입력해주세요.\n"
-str_use = "USE:\\extract_sql_data_bib.py [file_name]\n"
+str_use = "USE:\\extract_sql_data_bib.py [원본파일 경로/이름]\n"
+
+# 200111(Sat) 저장할 파일 이름 확장자 .sql 이 붙음
+str_savefile_name = "bib_eKJV"
+
 # str_savefile_name = "bib_kHRV"  # 190405
-str_savefile_name = "bib_eNIV2011"  # 190405
+# str_savefile_name = "bib_eNIV2011"  # 190405
 
 # 공식문서
 # The Python Tutotial
@@ -103,7 +117,10 @@ except FileNotFoundError as e:
 # writemyfile("bib_line_num.txt", str_file)
 # writemyfile("bib00_eNIV2011.sql", str_file)
 # writemyfile("bib_kNKRV.sql", str_file)
-writemyfile("{0:s}.sql".format(str_savefile_name), str_file)  # 190405
+# writemyfile("{0:s}.sql".format(str_savefile_name), str_file)  # 190405
+
+# 200111 저장할 폴더(sql) 추가
+writemyfile("./sql/{0:s}.sql".format(str_savefile_name), str_file)
 
 
 '''
