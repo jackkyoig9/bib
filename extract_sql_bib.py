@@ -73,7 +73,11 @@ def readmyfile(fname):
                 str_ch01 = bib_ch[0]
                 str_ch02 = bib_ch[1]
                 # bib content
-                bib_content = bib_line[2]
+                bib_content_tmp = bib_line[2]
+                # 20200116 ' 문자를 ''로 바꿈
+                bib_content = bib_content_tmp.replace("'", "''")
+                # 20200115 ' 문자를 `로 바꿈
+                #bib_content = bib_content_tmp.replace("'","`")
 
                 # str_ch01 과 str_ch02로 붙여놓으면 구분이 어려움
                 str_bib_id = str_id + str_index + bib_line[1]
