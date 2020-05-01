@@ -12,7 +12,7 @@ DESCRIPTION: 성경 파일을 읽고 분석해서 ./json/만든 폴더에 모든
 
 2. original_bib_file 에 원본파일 확인(from /Users/iki/Downloads/vm_downloads/01_edu/99_bib)
 eKJV.btx # 20200108(Wed) KJS(킹제임스)
-kNKRV.btx
+kNKRV.btx # 개역개정판
 
 3. bib_name 를 정함
 bib_name = "eKJV"  # 20200108(Wed) KJS(킹제임스)
