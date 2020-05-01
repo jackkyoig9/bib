@@ -27,7 +27,8 @@ str_please = "파일을 입력해주세요.\n"
 str_use = "USE:\\extract_sql_data_bib.py [원본파일 경로/이름]\n"
 
 # 200111(Sat) 저장할 파일 이름 확장자 .sql 이 붙음
-str_savefile_name = "bib_eKJV"
+# str_savefile_name = "bib_eKJV"
+str_savefile_name = "bib_kNKRV"  # 200501 한글은 따옴표 처리시 문제가 있음
 
 # str_savefile_name = "bib_kHRV"  # 190405
 # str_savefile_name = "bib_eNIV2011"  # 190405
